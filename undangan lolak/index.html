@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Undangan Mepandes</title>
+
+<!-- LINK PREVIEW WHATSAPP -->
+<meta property="og:title" content="Undangan Upacara Mepandes">
+<meta property="og:description" content="Dengan hormat kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada Upacara Manusa Yadnya Mepandes serta memberikan doa restu.">
+<meta property="og:image" content="https://i.imgur.com/6XbKQ9K.jpg">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Undangan Upacara Mepandes">
+<meta name="twitter:description" content="Undangan Upacara Manusa Yadnya Mepandes">
+<meta name="twitter:image" content="https://i.imgur.com/6XbKQ9K.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Poppins;
+background:#f6f2e9;
+color:#333;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* ORNAMEN POJOK */
+
+.ukiran-top{
+position:fixed;
+top:0;
+left:0;
+width:220px;
+opacity:0.10;
+z-index:-1;
+}
+
+.ukiran-bottom{
+position:fixed;
+bottom:0;
+right:0;
+width:220px;
+opacity:0.10;
+z-index:-1;
+}
+
+/* COVER */
+
+.cover{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:#efe7d5;
+padding:20px;
+}
+
+.cover-box{
+animation:fadeUp 1.5s;
+max-width:650px;
+padding:20px;
+}
+
+.cover p{
+font-size:19px;
+}
+
+.mepandes{
+font-family:'Great Vibes';
+font-size:80px;
+color:#9b7a43;
+margin:10px 0;
+}
+
+.btn{
+margin-top:35px;
+padding:16px 40px;
+border:none;
+border-radius:30px;
+background:#b79b65;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* CONTENT */
+
+.content{
+display:none;
+padding:40px 15px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:45px;
+border-radius:16px;
+box-shadow:0 15px 40px rgba(0,0,0,0.12);
+position:relative;
+}
+
+/* ORNAMEN DALAM BOX */
+
+.container:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:120px;
+height:120px;
+background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Balinese_ornament.svg/512px-Balinese_ornament.svg.png');
+background-size:contain;
+background-repeat:no-repeat;
+opacity:0.08;
+}
+
+.container:after{
+content:"";
+position:absolute;
+bottom:0;
+right:0;
+width:120px;
+height:120px;
+background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Balinese_ornament.svg/512px-Balinese_ornament.svg.png');
+background-size:contain;
+background-repeat:no-repeat;
+opacity:0.08;
+transform:rotate(180deg);
+}
+
+/* SECTION */
+
+.section{
+opacity:0;
+transform:translateY(60px) scale(0.95);
+transition:all 0.8s ease;
+margin-bottom:50px;
+text-align:center;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+p{
+line-height:1.8;
+}
+
+/* TITLE */
+
+.ukiran{
+font-family:'Playfair Display';
+font-size:22px;
+color:#9b7a43;
+letter-spacing:2px;
+text-align:center;
+margin-bottom:15px;
+}
+
+/* WEDA */
+
+.mantra{
+font-family:'Great Vibes';
+color:#9b7a43;
+font-size:32px;
+line-height:1.8;
+}
+
+.arti{
+font-style:italic;
+margin-top:10px;
+}
+
+/* NAMA */
+
+.nama-box{
+margin-top:25px;
+text-align:center;
+}
+
+.nama-orang{
+font-family:'Playfair Display';
+font-size:26px;
+color:#8b6a35;
+margin-bottom:8px;
+}
+
+.orangtua{
+text-align:center;
+line-height:1.8;
+}
+
+/* INFO */
+
+.info{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:20px;
+}
+
+.info div{
+background:#f5f1e8;
+padding:18px;
+border-radius:12px;
+text-align:center;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.countdown div{
+background:#b79b65;
+color:white;
+padding:14px;
+border-radius:10px;
+min-width:75px;
+text-align:center;
+}
+
+/* MAP */
+
+.maps{
+margin-top:25px;
+border-radius:12px;
+overflow:hidden;
+}
+
+/* RSVP */
+
+.rsvp input,
+.rsvp textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-family:Poppins;
+}
+
+.status{
+display:flex;
+gap:10px;
+margin-top:12px;
+}
+
+.status button{
+flex:1;
+border:none;
+background:#b79b65;
+color:white;
+padding:12px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.pesan{
+background:#f5f1e8;
+padding:12px;
+border-radius:10px;
+margin-top:10px;
+text-align:left;
+}
+
+/* MUSIC */
+
+#musicBtn{
+position:fixed;
+bottom:18px;
+right:18px;
+background:#b79b65;
+border:none;
+width:42px;
+height:42px;
+border-radius:50%;
+color:white;
+cursor:pointer;
+font-size:16px;
+z-index:9999;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.mepandes{
+font-size:55px;
+}
+
+.container{
+padding:30px;
+}
+
+.info{
+grid-template-columns:1fr;
+}
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<img class="ukiran-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Balinese_ornament.svg/512px-Balinese_ornament.svg.png">
+<img class="ukiran-bottom" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Balinese_ornament.svg/512px-Balinese_ornament.svg.png">
+
+<audio id="musik" loop>
+<source src="sound/lolaksound.mp3">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()">▶</button>
+
+<!-- COVER -->
+
+<section class="cover" id="cover">
+
+<div class="cover-box">
+
+<p>Undangan Manusa Yadnya</p>
+
+<div class="mepandes">Mepandes</div>
+
+<p>Kepada Yth.</p>
+
+<h3 id="namaTamu">Tamu Undangan</h3>
+
+<button class="btn" onclick="bukaUndangan()">Buka Undangan</button>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="content" id="content">
+
+<div class="container">
+
+<div class="section">
+
+<p style="font-family:'Great Vibes'; font-size:30px; color:#9b7a43;">Om Swastyastu</p>
+
+<p>
+Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa,
+kami sekeluarga bermaksud menyelenggarakan
+Upacara Manusa Yadnya Mepandes (Potong Gigi)
+serta mengundang Bapak/Ibu/Saudara/i
+untuk dapat hadir memberikan doa restu.
+</p>
+
+</div>
+
+<div class="section">
+
+<div class="mantra">
+Samanam Astu Vo Mano<br>
+Yatha Vah Susahasti
+</div>
+
+<div class="arti">
+Semoga pikiran kita bersatu dalam keharmonisan dan kebahagiaan.
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="ukiran">
+Yang Melaksanakan Upacara
+</div>
+
+<div class="nama-box">
+
+<div class="nama-orang">
+I Putu Pande Suwardika <br>
+I Kadek Ardi Putra
+</div>
+
+<div class="orangtua">
+Putra dari pasangan<br>
+I Nyoman Wartika<br>
+Ni Nyoman Suwari
+</div>
+
+</div>
+
+<div class="nama-box">
+
+<div class="nama-orang">
+I Wayan Adi Cahya
+</div>
+
+<div class="orangtua">
+Putra dari pasangan<br>
+Putu Murdaningsih<br>
+Ketut Pande Wiryanata
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="info">
+
+<div>
+<b>Hari</b><br>Rabu
+</div>
+
+<div>
+<b>Tanggal</b><br>25 Maret 2026
+</div>
+
+<div>
+<b>Waktu</b><br>08.00 WITA
+</div>
+
+<div>
+<b>Tempat</b><br>Sumita, Gianyar
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="countdown">
+
+<div><span id="hari"></span><br>Hari</div>
+<div><span id="jam"></span><br>Jam</div>
+<div><span id="menit"></span><br>Menit</div>
+<div><span id="detik"></span><br>Detik</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h3>Lokasi</h3>
+
+<div class="maps">
+
+<iframe
+src="https://www.google.com/maps?q=Denpasar,Bali&output=embed"
+width="100%"
+height="300"
+style="border:0">
+</iframe>
+
+</div>
+
+</div>
+
+<div class="section rsvp">
+
+<h3>Ucapan & Doa</h3>
+
+<input id="nama" placeholder="Nama">
+
+<textarea id="pesan" placeholder="Ucapan / doa"></textarea>
+
+<div class="status">
+
+<button onclick="kirim('Hadir')">Hadir</button>
+<button onclick="kirim('Tidak Hadir')">Tidak Hadir</button>
+
+</div>
+
+<div id="daftar"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+/* NAMA TAMU */
+
+const params=new URLSearchParams(window.location.search)
+let nama=params.get("to")
+
+if(nama){
+nama = nama.replace(/\+/g," ")
+document.getElementById("namaTamu").innerText=decodeURIComponent(nama)
+}
+
+/* BUKA UNDANGAN */
+
+function bukaUndangan(){
+
+document.getElementById("cover").style.display="none"
+document.getElementById("content").style.display="block"
+
+let musik=document.getElementById("musik")
+let btn=document.getElementById("musicBtn")
+
+musik.play()
+btn.innerHTML="❚❚"
+
+setTimeout(()=>{
+document.querySelectorAll(".section").forEach(sec=>{
+sec.classList.add("show")
+})
+},200)
+
+}
+
+/* MUSIC */
+
+function toggleMusic(){
+
+let m=document.getElementById("musik")
+let btn=document.getElementById("musicBtn")
+
+if(m.paused){
+m.play()
+btn.innerHTML="❚❚"
+}else{
+m.pause()
+btn.innerHTML="▶"
+}
+
+}
+
+/* COUNTDOWN */
+
+let target=new Date("March 25, 2026 08:00:00").getTime()
+
+setInterval(()=>{
+
+let now=new Date().getTime()
+let sisa=target-now
+
+document.getElementById("hari").innerHTML=Math.floor(sisa/(1000*60*60*24))
+document.getElementById("jam").innerHTML=Math.floor((sisa%(1000*60*60*24))/(1000*60*60))
+document.getElementById("menit").innerHTML=Math.floor((sisa%(1000*60*60))/(1000*60))
+document.getElementById("detik").innerHTML=Math.floor((sisa%(1000*60))/1000)
+
+},1000)
+
+/* RSVP */
+
+function kirim(status){
+
+let nama=document.getElementById("nama").value
+let pesan=document.getElementById("pesan").value
+
+if(nama==""){
+alert("Isi nama")
+return
+}
+
+let data={nama,pesan,status}
+
+let list=JSON.parse(localStorage.getItem("ucapan")||"[]")
+
+list.push(data)
+
+localStorage.setItem("ucapan",JSON.stringify(list))
+
+tampil()
+
+}
+
+function tampil(){
+
+let list=JSON.parse(localStorage.getItem("ucapan")||"[]")
+
+let html=""
+
+list.reverse().forEach(d=>{
+
+html+=`
+<div class="pesan">
+<b>${d.nama}</b> (${d.status})<br>
+${d.pesan}
+</div>
+`
+
+})
+
+document.getElementById("daftar").innerHTML=html
+
+}
+
+tampil()
+
+/* ANIMASI SCROLL */
+
+const sections=document.querySelectorAll(".section")
+
+function animasiScroll(){
+
+sections.forEach(sec=>{
+
+let posisi=sec.getBoundingClientRect().top
+let layar=window.innerHeight
+
+if(posisi < layar-120 && posisi > -100){
+sec.classList.add("show")
+}else{
+sec.classList.remove("show")
+}
+
+})
+
+}
+
+window.addEventListener("scroll",animasiScroll)
+
+</script>
+
+</body>
+</html>
