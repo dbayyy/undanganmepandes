@@ -554,8 +554,17 @@ window.toggleMusic=toggleMusic
 let target=new Date("March 25, 2026 08:00:00").getTime()
 
 setInterval(()=>{
+
  let now=new Date().getTime()
  let sisa=target-now
+
+ if(sisa < 0){
+  document.getElementById("hari").innerHTML = 0
+  document.getElementById("jam").innerHTML = 0
+  document.getElementById("menit").innerHTML = 0
+  document.getElementById("detik").innerHTML = 0
+  return
+ }
 
  document.getElementById("hari").innerHTML=Math.floor(sisa/(1000*60*60*24))
  document.getElementById("jam").innerHTML=Math.floor((sisa%(1000*60*60*24))/(1000*60*60))
